@@ -83,6 +83,7 @@ namespace sensor {
 #include "Carla/Sensor/GnssSensor.h"
 #include "Carla/Sensor/InertialMeasurementUnit.h"
 #include "Carla/Sensor/LaneInvasionSensor.h"
+#include "Carla/Sensor/CrossLaneSensor.h"
 #include "Carla/Sensor/ObstacleDetectionSensor.h"
 #include "Carla/Sensor/Radar.h"
 #include "Carla/Sensor/RayCastLidar.h"

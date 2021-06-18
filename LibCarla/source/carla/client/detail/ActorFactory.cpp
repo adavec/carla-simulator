@@ -10,6 +10,7 @@
 #include "carla/StringUtil.h"
 #include "carla/client/Actor.h"
 #include "carla/client/LaneInvasionSensor.h"
+#include "carla/client/CrossLaneSensor.h"
 #include "carla/client/ServerSideSensor.h"
 #ifdef RSS_ENABLED
 #include "carla/rss/RssSensor.h"
@@ -75,8 +76,10 @@ namespace detail {
       rpc::Actor description,
       GarbageCollectionPolicy gc) {
     auto init = ActorInitializer{description, episode};
-    if (description.description.id == "sensor.other.lane_invasion") {
-      return MakeActorImpl<LaneInvasionSensor>(std::move(init), gc);
+    if (description.description.id == "sensor.other.lane_invasion") { 
+      return MakeActorImpl<CrossLaneSensor>(std::move(init), gc); // LaneInvasionSensor
+    } else if (description.description.id == "sensor.other.cross_lane") {
+      return MakeActorImpl<CrossLaneSensor>(std::move(init), gc);
 #ifdef RSS_ENABLED
     } else if (description.description.id == "sensor.other.rss") {
       return MakeActorImpl<RssSensor>(std::move(init), gc);
