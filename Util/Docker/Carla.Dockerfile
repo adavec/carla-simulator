@@ -11,10 +11,18 @@ RUN cd /home/ue4 && \
   ./Update.sh
 
 RUN cd /home/ue4/carla-simulator && \
-  make CarlaUE4Editor && \
-  make PythonAPI && \
-  make build.utils && \
-  make package && \
+  make CarlaUE4Editor
+  
+RUN cd /home/ue4/carla-simulator && \
+  make PythonAPI
+  
+RUN cd /home/ue4/carla-simulator && \
+  make build.utils
+  
+RUN cd /home/ue4/carla-simulator && \
+  make package
+
+RUN cd /home/ue4/carla-simulator && \
   rm -r /home/ue4/carla/Dist
 
 WORKDIR /home/ue4/carla
