@@ -33,6 +33,7 @@ class ADVSCamera;
 class AGnssSensor;
 class AInertialMeasurementUnit;
 class ALaneInvasionSensor;
+class ACrossLaneSensor;
 class AObstacleDetectionSensor;
 class ARadar;
 class ARayCastSemanticLidar;
@@ -59,6 +60,7 @@ namespace sensor {
     std::pair<AGnssSensor *, s11n::GnssSerializer>,
     std::pair<AInertialMeasurementUnit *, s11n::IMUSerializer>,
     std::pair<ALaneInvasionSensor *, s11n::NoopSerializer>,
+    std::pair<ACrossLaneSensor *, s11n::NoopSerializer>,
     std::pair<AObstacleDetectionSensor *, s11n::ObstacleDetectionEventSerializer>,
     std::pair<ARadar *, s11n::RadarSerializer>,
     std::pair<ARayCastSemanticLidar *, s11n::SemanticLidarSerializer>,

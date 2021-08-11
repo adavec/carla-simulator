@@ -77,7 +77,7 @@ namespace detail {
       GarbageCollectionPolicy gc) {
     auto init = ActorInitializer{description, episode};
     if (description.description.id == "sensor.other.lane_invasion") { 
-      return MakeActorImpl<CrossLaneSensor>(std::move(init), gc); // LaneInvasionSensor
+      return MakeActorImpl<LaneInvasionSensor>(std::move(init), gc);
     } else if (description.description.id == "sensor.other.cross_lane") {
       return MakeActorImpl<CrossLaneSensor>(std::move(init), gc);
 #ifdef RSS_ENABLED
