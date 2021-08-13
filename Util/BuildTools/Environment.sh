@@ -33,7 +33,8 @@ else
 fi
 
 function get_git_repository_version {
-  git describe --tags --dirty --always
+  #git describe --tags --dirty --always
+  git describe --tags --always
 }
 
 function copy_if_changed {
